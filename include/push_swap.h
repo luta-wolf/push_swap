@@ -6,17 +6,21 @@
 /*   By: einterdi <einterdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/09 17:44:03 by einterdi          #+#    #+#             */
-/*   Updated: 2022/01/11 20:03:53 by einterdi         ###   ########.fr       */
+/*   Updated: 2022/01/12 11:19:55 by einterdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
-#define PUSH_SWAP_H
+# define PUSH_SWAP_H
 
-#include "../libft/libft.h"
-#include <stdio.h>
+# include "../libft/libft.h"
+# include <stdio.h> // для printf (после удалить)
 
-typedef struct s_node
+// colors
+# define TURQUOISE 	"\033[36;1m"
+# define END		"\033[0m"
+
+typedef struct s_node // структура листа
 {
 	int				num;
 	int				index;
@@ -31,8 +35,6 @@ typedef struct s_all
 	struct s_node	*stack_b;
 	int				size_a;
 	int				size_b;
-
 }					t_all;
-
 
 #endif
