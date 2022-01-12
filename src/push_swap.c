@@ -6,7 +6,7 @@
 /*   By: einterdi <einterdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/09 17:44:12 by einterdi          #+#    #+#             */
-/*   Updated: 2022/01/12 12:38:59 by einterdi         ###   ########.fr       */
+/*   Updated: 2022/01/12 21:49:20 by einterdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,7 +77,7 @@ void	lstadd_back(t_node **stack_a, t_node *new)
 void	add_stack(int argc, char **argv)
 {
 	t_all	*all;
-	int		num;
+	// int		num;
 	int		i;
 
 	all = malloc(sizeof(t_all));
@@ -90,8 +90,9 @@ void	add_stack(int argc, char **argv)
 	i = 1;
 	while (argv[i])
 	{
-		num = ft_atoi(argv[i]);
-		lstadd_back(&all->stack_a, new_list(num, 0));
+		// num = ft_atoi(argv[i]);
+		// lstadd_back(&all->stack_a, new_list(num, 0));
+		sort(all, argc, argv);
 		i++;
 	}
 //	write(1, "\n\033[1;32m----- *** -----\033[0m\n\n", 30);
@@ -100,10 +101,13 @@ void	add_stack(int argc, char **argv)
 	while (all->size_a > ++i)
 	{
 		ft_putnbr_fd(all->stack_a->num, 1);
+		write(1, "\t", 1);
+		ft_putnbr_fd(all->stack_a->index, 1);
 		all->stack_a = all->stack_a->next;
 		write(1, "\n", 1);
 	}
 	write(1, "\033[36;1m---------------\033[0m\n", 28);
+	free_stack(all);
 }
 
 int	main(int argc, char **argv)
@@ -112,6 +116,7 @@ int	main(int argc, char **argv)
 	{
 //		check_arg(argv);
 		add_stack(argc, argv);
+		// sort(argc, argv);
 	}
 	return (0);
 }
@@ -133,8 +138,12 @@ int	main(int argc, char **argv)
 - из стека В кидать числа в стек А на их место с учетом нименьших затрат
 
 
-
+Сортировка:
 1) написать функции:
 - добавление в стек
--
+- отсортировать пузырьком/ вставкой/ выбором
+- проверить стек на то отсортирован ли он, тогда чистим память и выходим
+- запускаем главный алгоритм
+- (прописываю функции push/swap)
+- после сортировки всю память очищаем и выходим
 */

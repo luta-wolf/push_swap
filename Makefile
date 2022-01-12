@@ -1,6 +1,6 @@
 NAME	=	push_swap
 
-SRCS	=	src/push_swap.c
+SRCS	=	src/push_swap.c src/babble_sort.c src/free_node.c
 
 OBJ		=	$(SRCS:%.c=%.o)
 
