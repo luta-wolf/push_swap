@@ -6,7 +6,7 @@
 /*   By: einterdi <einterdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/09 17:44:12 by einterdi          #+#    #+#             */
-/*   Updated: 2022/01/12 21:49:20 by einterdi         ###   ########.fr       */
+/*   Updated: 2022/01/12 22:12:12 by einterdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,16 +87,8 @@ void	add_stack(int argc, char **argv)
 	all->stack_b = NULL;
 	all->size_a = argc - 1;
 	all->size_b = 0;
-	i = 1;
-	while (argv[i])
-	{
-		// num = ft_atoi(argv[i]);
-		// lstadd_back(&all->stack_a, new_list(num, 0));
-		sort(all, argc, argv);
-		i++;
-	}
-//	write(1, "\n\033[1;32m----- *** -----\033[0m\n\n", 30);
-	write(1, "\033[36;1m--- stack a ---\033[0m\n", 28);
+	sort(all, argc, argv);
+	write(1, "\033[36;1m-- stack a --\033[0m\n", 26);
 	i = -1;
 	while (all->size_a > ++i)
 	{
@@ -106,7 +98,7 @@ void	add_stack(int argc, char **argv)
 		all->stack_a = all->stack_a->next;
 		write(1, "\n", 1);
 	}
-	write(1, "\033[36;1m---------------\033[0m\n", 28);
+	write(1, "\033[36;1m-------------\033[0m\n", 26);
 	free_stack(all);
 }
 

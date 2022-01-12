@@ -6,7 +6,7 @@
 /*   By: einterdi <einterdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/12 21:09:17 by einterdi          #+#    #+#             */
-/*   Updated: 2022/01/12 21:20:32 by einterdi         ###   ########.fr       */
+/*   Updated: 2022/01/12 22:07:20 by einterdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,7 +70,6 @@ void	sort(t_all *all, int len, char **arr)
 		{
 			if (arr_not_sort[i] == arr_sort[j])
 				lstadd_back(&all->stack_a, new_list(arr_not_sort[i], j + 1));
-				// printf("%d\t[%d]\n", arr_not_sort[i], j);
 			j++;
 		}
 		i++;
