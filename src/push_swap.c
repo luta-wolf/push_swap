@@ -6,17 +6,11 @@
 /*   By: einterdi <einterdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/09 17:44:12 by einterdi          #+#    #+#             */
-/*   Updated: 2022/01/12 22:12:12 by einterdi         ###   ########.fr       */
+/*   Updated: 2022/01/14 19:52:33 by einterdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-void	error(void)
-{
-	ft_putstr_fd("Error\n", 2);
-	exit(EXIT_FAILURE);
-}
 
 void	check_arg(char **av)
 {
@@ -77,8 +71,6 @@ void	lstadd_back(t_node **stack_a, t_node *new)
 void	add_stack(int argc, char **argv)
 {
 	t_all	*all;
-	// int		num;
-	int		i;
 
 	all = malloc(sizeof(t_all));
 	if (all == NULL)
@@ -88,17 +80,10 @@ void	add_stack(int argc, char **argv)
 	all->size_a = argc - 1;
 	all->size_b = 0;
 	sort(all, argc, argv);
-	write(1, "\033[36;1m-- stack a --\033[0m\n", 26);
-	i = -1;
-	while (all->size_a > ++i)
-	{
-		ft_putnbr_fd(all->stack_a->num, 1);
-		write(1, "\t", 1);
-		ft_putnbr_fd(all->stack_a->index, 1);
-		all->stack_a = all->stack_a->next;
-		write(1, "\n", 1);
-	}
-	write(1, "\033[36;1m-------------\033[0m\n", 26);
+//	pb(all);
+
+
+	print_stacks(all);
 	free_stack(all);
 }
 
