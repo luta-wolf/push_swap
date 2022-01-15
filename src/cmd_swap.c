@@ -6,7 +6,7 @@
 /*   By: einterdi <einterdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/12 22:06:39 by einterdi          #+#    #+#             */
-/*   Updated: 2022/01/15 09:07:44 by einterdi         ###   ########.fr       */
+/*   Updated: 2022/01/15 11:04:01 by einterdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ void	sb(t_all *all)
 	int tmp;
 
 	if (all->size_b < 2)
-	return;
+		return;
 	tmp = all->stack_b->num;
 	all->stack_b->num = all->stack_b->next->num;
 	all->stack_b->next->num = tmp;
@@ -54,6 +54,9 @@ void	sb(t_all *all)
 
 void	ss(t_all *all)
 {
-	sa(all);
-	sb(all);
+	if (all->size_a > 1 && all->size_b > 1)
+	{
+		sa(all);
+		sb(all);
+	}
 }

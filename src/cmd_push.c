@@ -6,7 +6,7 @@
 /*   By: einterdi <einterdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/12 22:59:40 by einterdi          #+#    #+#             */
-/*   Updated: 2022/01/14 20:04:58 by einterdi         ###   ########.fr       */
+/*   Updated: 2022/01/15 11:02:54 by einterdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,65 +17,69 @@
 pb : push b — взять первый элемент в верхней части a и поместить его в верхнюю часть b.
 			Ничего не делать, если a пусто.*/
 
-void	pb(t_all *stack_all)
+void	pb(t_all *all)
 {
 	t_node	*tmp;
 
-	if (stack_all->size_a == 0)
+	if (all->size_a == 0)
 		return ;
 
-	tmp = stack_all->stack_a->next;
-	stack_all->stack_a->prev->next = stack_all->stack_a->next;
-	stack_all->stack_a->next->prev = stack_all->stack_a->prev;
+	tmp = all->stack_a->next;
+	all->stack_a->prev->next = all->stack_a->next;
+	all->stack_a->next->prev = all->stack_a->prev;
 
-	if (stack_all->stack_b == NULL)
+	if (all->stack_b == NULL)
 	{
-		stack_all->stack_b = stack_all->stack_a;
-		stack_all->stack_a->next = stack_all->stack_b;
-		stack_all->stack_a->prev = stack_all->stack_b;
+		all->stack_b = all->stack_a;
+		all->stack_a->next = all->stack_b;
+		all->stack_a->prev = all->stack_b;
 	}
-	else // (stack_all->stack_b)
+	else // (all->stack_b)
 	{
-		stack_all->stack_a->prev = stack_all->stack_b->prev;
-		stack_all->stack_a->next = stack_all->stack_b;
-		stack_all->stack_b->prev->next = stack_all->stack_a;
-		stack_all->stack_b->prev = stack_all->stack_a;
-		stack_all->stack_b = stack_all->stack_a;
+		all->stack_a->prev = all->stack_b->prev;
+		all->stack_a->next = all->stack_b;
+		all->stack_b->prev->next = all->stack_a;
+		all->stack_b->prev = all->stack_a;
+		all->stack_b = all->stack_a;
 	}
 
-	stack_all->stack_a = tmp;
-	stack_all->size_b++;
-	stack_all->size_a--;
+	all->stack_a = tmp;
+	if (all->size_a == 1)
+		all->stack_a = NULL;
+	all->size_b++;
+	all->size_a--;
 }
 
 
-void pa(t_all *stack_all)
+void pa(t_all *all)
 {
 	t_node	*tmp;
-	
-	if (stack_all->size_b == 0)
+
+	if (all->size_b == 0)
 		return ;
 
-	tmp = stack_all->stack_b->next;
-	stack_all->stack_b->prev->next = stack_all->stack_b->next;
-	stack_all->stack_b->next->prev = stack_all->stack_b->prev;
+	tmp = all->stack_b->next;
+	all->stack_b->prev->next = all->stack_b->next;
+	all->stack_b->next->prev = all->stack_b->prev;
 
-	if (stack_all->stack_a)
+	if (all->stack_a)
 	{
-		stack_all->stack_b->prev = stack_all->stack_a->prev;
-		stack_all->stack_b->next = stack_all->stack_a;
-		stack_all->stack_a->prev->next =stack_all->stack_b;
-		stack_all->stack_a->prev = stack_all->stack_b;
-		stack_all->stack_a = stack_all->stack_b;
+		all->stack_b->prev = all->stack_a->prev;
+		all->stack_b->next = all->stack_a;
+		all->stack_a->prev->next =all->stack_b;
+		all->stack_a->prev = all->stack_b;
+		all->stack_a = all->stack_b;
 	}
 	else
 	{
-		stack_all->stack_a = stack_all->stack_b;
-		stack_all->stack_a->next = stack_all->stack_a;
-		stack_all->stack_a->prev = stack_all->stack_a;
+		all->stack_a = all->stack_b;
+		all->stack_a->next = all->stack_a;
+		all->stack_a->prev = all->stack_a;
 	}
-	stack_all->stack_b = tmp;
-	stack_all->size_b--;
-	stack_all->size_a++;
+	all->stack_b = tmp;
+	if (all->size_b == 1)
+		all->stack_b = NULL;
+	all->size_b--;
+	all->size_a++;
 }
 
