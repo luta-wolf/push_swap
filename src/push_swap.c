@@ -6,7 +6,7 @@
 /*   By: einterdi <einterdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/09 17:44:12 by einterdi          #+#    #+#             */
-/*   Updated: 2022/01/15 22:05:04 by einterdi         ###   ########.fr       */
+/*   Updated: 2022/01/15 22:36:25 by einterdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,9 +87,7 @@ void	add_stack(int argc, char **argv)
 	a_to_b(all);
 	min_max_med_a(all);
 	min_max_med_b(all);
-	// print_stacks(all);
-	// pb(all);
-	// print_stacks(all);
+
 
 
 

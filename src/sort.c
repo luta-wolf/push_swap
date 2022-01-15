@@ -6,7 +6,7 @@
 /*   By: einterdi <einterdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/15 14:29:49 by einterdi          #+#    #+#             */
-/*   Updated: 2022/01/15 22:04:40 by einterdi         ###   ########.fr       */
+/*   Updated: 2022/01/15 22:22:37 by einterdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,22 @@ void	a_to_b(t_all *all)
 		else
 			ra(all, 1);
 	}
+}
+
+void	b_to_a(t_all *all)
+{
+	int i;
+	int len_order;
+
+	i = all->size_b;
+	len_order = 0;
+	while (i--)
+	{
+		if (all->stack_b->flag == all->order)
+			len_order++;
+	}
+	min_max_med_b(all);
+
 }
 
 void	min_max_med_a(t_all *all)
