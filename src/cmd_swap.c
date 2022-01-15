@@ -6,7 +6,7 @@
 /*   By: einterdi <einterdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/12 22:06:39 by einterdi          #+#    #+#             */
-/*   Updated: 2022/01/13 15:09:00 by einterdi         ###   ########.fr       */
+/*   Updated: 2022/01/15 09:07:44 by einterdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,21 +18,42 @@ sb : swap b — поменять местами первые 2 элемента 
 			Ничего не делать, если есть только один элемент или его нет).
 ss : sa и sb одновременно.*/
 
-void sa(t_all *all)
+void	sa(t_all *all)
 {
-	int a = 5;
-	int b = 7;
-	int tmp = a;
-	a = b;
-	b = tmp;
+	int tmp;
+
+	if (all->size_a < 2)
+		return;
+	tmp = all->stack_a->num;
+	all->stack_a->num = all->stack_a->next->num;
+	all->stack_a->next->num = tmp;
+	tmp = all->stack_a->index;
+	all->stack_a->index = all->stack_a->next->index;
+	all->stack_a->next->index = tmp;
+	tmp = all->stack_a->flag;
+	all->stack_a->flag = all->stack_a->next->flag;
+	all->stack_a->next->flag = tmp;
 }
 
-void sb(t_all all)
+void	sb(t_all *all)
 {
+	int tmp;
 
+	if (all->size_b < 2)
+	return;
+	tmp = all->stack_b->num;
+	all->stack_b->num = all->stack_b->next->num;
+	all->stack_b->next->num = tmp;
+	tmp = all->stack_b->index;
+	all->stack_b->index = all->stack_b->next->index;
+	all->stack_b->next->index = tmp;
+	tmp = all->stack_b->flag;
+	all->stack_b->flag = all->stack_b->next->flag;
+	all->stack_b->next->flag = tmp;
 }
 
-void ss(t_all all)
+void	ss(t_all *all)
 {
-
+	sa(all);
+	sb(all);
 }

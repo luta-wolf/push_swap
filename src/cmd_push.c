@@ -6,7 +6,7 @@
 /*   By: einterdi <einterdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/12 22:59:40 by einterdi          #+#    #+#             */
-/*   Updated: 2022/01/14 18:53:25 by einterdi         ###   ########.fr       */
+/*   Updated: 2022/01/14 20:04:58 by einterdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,10 @@ pb : push b — взять первый элемент в верхней час�
 
 void	pb(t_all *stack_all)
 {
+	t_node	*tmp;
+
 	if (stack_all->size_a == 0)
 		return ;
-	t_node	*tmp;
 
 	tmp = stack_all->stack_a->next;
 	stack_all->stack_a->prev->next = stack_all->stack_a->next;
@@ -50,9 +51,10 @@ void	pb(t_all *stack_all)
 
 void pa(t_all *stack_all)
 {
+	t_node	*tmp;
+	
 	if (stack_all->size_b == 0)
 		return ;
-	t_node	*tmp;
 
 	tmp = stack_all->stack_b->next;
 	stack_all->stack_b->prev->next = stack_all->stack_b->next;

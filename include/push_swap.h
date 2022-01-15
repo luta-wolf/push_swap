@@ -6,7 +6,7 @@
 /*   By: einterdi <einterdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/09 17:44:03 by einterdi          #+#    #+#             */
-/*   Updated: 2022/01/14 19:57:22 by einterdi         ###   ########.fr       */
+/*   Updated: 2022/01/14 20:46:08 by einterdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,9 @@ void	free_stack(t_all *all);
 // cmd_push.c
 void	pb(t_all *stack_all);
 void	pa(t_all *stack_all);
+// cmd_swap.c
+void	sa(t_all *all);
+void	sb(t_all *all);
 
 // ps_error.c
 void	error(void);
