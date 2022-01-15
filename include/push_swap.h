@@ -6,7 +6,7 @@
 /*   By: einterdi <einterdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/09 17:44:03 by einterdi          #+#    #+#             */
-/*   Updated: 2022/01/14 20:46:08 by einterdi         ###   ########.fr       */
+/*   Updated: 2022/01/15 13:41:42 by einterdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,12 +48,22 @@ t_node	*new_list(int num, int index);
 void	free_stack(t_all *all);
 
 // cmd_push.c
-void	pb(t_all *stack_all);
-void	pa(t_all *stack_all);
+void	pb(t_all *all);
+void	pa(t_all *all);
+void	push_b(t_all *all);
+void	push_a(t_all *all);
 // cmd_swap.c
 void	sa(t_all *all);
 void	sb(t_all *all);
-
+void	ss(t_all *all);
+// cmd_rotate.c
+void	ra(t_all *all);
+void	rb(t_all *all);
+void	rr(t_all *all);
+// cmd_reverse.c
+void	rra(t_all *all);
+void	rrb(t_all *all);
+void	rrr(t_all *all);
 // ps_error.c
 void	error(void);
 

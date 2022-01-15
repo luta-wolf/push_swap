@@ -6,7 +6,7 @@
 /*   By: einterdi <einterdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/12 22:06:39 by einterdi          #+#    #+#             */
-/*   Updated: 2022/01/15 11:04:01 by einterdi         ###   ########.fr       */
+/*   Updated: 2022/01/15 13:22:59 by einterdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,10 @@ ss : sa и sb одновременно.*/
 
 void	sa(t_all *all)
 {
-	int tmp;
+	int	tmp;
 
 	if (all->size_a < 2)
-		return;
+		return ;
 	tmp = all->stack_a->num;
 	all->stack_a->num = all->stack_a->next->num;
 	all->stack_a->next->num = tmp;
@@ -37,10 +37,10 @@ void	sa(t_all *all)
 
 void	sb(t_all *all)
 {
-	int tmp;
+	int	tmp;
 
 	if (all->size_b < 2)
-		return;
+		return ;
 	tmp = all->stack_b->num;
 	all->stack_b->num = all->stack_b->next->num;
 	all->stack_b->next->num = tmp;

@@ -6,7 +6,7 @@
 /*   By: einterdi <einterdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/09 17:44:12 by einterdi          #+#    #+#             */
-/*   Updated: 2022/01/15 11:01:33 by einterdi         ###   ########.fr       */
+/*   Updated: 2022/01/15 14:05:48 by einterdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,17 +80,28 @@ void	add_stack(int argc, char **argv)
 	all->size_a = argc - 1;
 	all->size_b = 0;
 	sort(all, argc, argv);
+	print_stacks(all);
 	pb(all);
-	// pa(all);
-	sa(all);
-	pb(all);
-	pb(all);
-	pb(all);
-	pb(all);
-	pb(all);
-	sa(all);
-	sb(all);
+	print_stacks(all);
 	pa(all);
+	print_stacks(all);
+	pb(all);
+	print_stacks(all);
+	pb(all);
+	print_stacks(all);
+	rrb(all);
+	print_stacks(all);
+	rra(all);
+	print_stacks(all);
+	rrr(all);
+
+	print_stacks(all);
+	rb(all);
+	print_stacks(all);
+	ra(all);
+	print_stacks(all);
+	rr(all);
+
 
 
 	print_stacks(all);
