@@ -6,7 +6,7 @@
 /*   By: einterdi <einterdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/12 21:09:17 by einterdi          #+#    #+#             */
-/*   Updated: 2022/01/12 22:07:20 by einterdi         ###   ########.fr       */
+/*   Updated: 2022/01/15 21:51:36 by einterdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,27 +14,27 @@
 
 void	sort(t_all *all, int len, char **arr)
 {
-	int *arr_not_sort;
-	int *arr_sort;
+	int *not_sort;
+	int *sort;
 	int i;
 	int j;
 	int tmp;
 	int count;
 	int num;
 
-	arr_not_sort = malloc(sizeof(int) * (len -1));
-	arr_sort = malloc(sizeof(int) * (len -1));
+	not_sort = malloc(sizeof(int) * (len -1));
+	sort = malloc(sizeof(int) * (len -1));
 	i = 0;
 	while (i < len - 1)
 	{
 		num = ft_atoi(arr[i + 1]);
-		arr_not_sort[i] = num;
-		arr_sort[i] = num;
+		not_sort[i] = num;
+		sort[i] = num;
 		i++;
 	}
 	i = 0;
 	while (i < len - 1)
-		printf("%d ", arr_not_sort[i++]);
+		printf("%d ", not_sort[i++]);
 	printf("Начальный массив\n");
 	i = 0;
 	count = 0;
@@ -43,11 +43,11 @@ void	sort(t_all *all, int len, char **arr)
 		j = 0;
 		while (j < (len -2 -i))
 		{
-			if(arr_sort[j] > arr_sort[j + 1])
+			if(sort[j] > sort[j + 1])
 				{
-					tmp = arr_sort[j+1];
-					arr_sort[j+1] = arr_sort[j];
-					arr_sort[j] = tmp;
+					tmp = sort[j+1];
+					sort[j+1] = sort[j];
+					sort[j] = tmp;
 					count++;
 				}
 			j++;
@@ -57,23 +57,22 @@ void	sort(t_all *all, int len, char **arr)
 	i = 0;
 	while (i < (len - 1))
 	{
-		printf("%d ", arr_sort[i]);
+		printf("%d ", sort[i]);
 		i++;
 	}
 	printf("Массив отсортирован\nИтераций %d\n", count);
-
 	i = 0;
 	while (i < len - 1)
 	{
 		j = 0;
 		while (j < len - 1)
 		{
-			if (arr_not_sort[i] == arr_sort[j])
-				lstadd_back(&all->stack_a, new_list(arr_not_sort[i], j + 1));
+			if (not_sort[i] == sort[j])
+				lstadd_back(&all->stack_a, new_list(not_sort[i], j + 1));
 			j++;
 		}
 		i++;
 	}
-	free(arr_not_sort);
-	free(arr_sort);
+	free(not_sort);
+	free(sort);
 }

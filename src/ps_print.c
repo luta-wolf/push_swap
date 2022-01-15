@@ -6,7 +6,7 @@
 /*   By: einterdi <einterdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/14 16:16:22 by einterdi          #+#    #+#             */
-/*   Updated: 2022/01/15 11:43:15 by einterdi         ###   ########.fr       */
+/*   Updated: 2022/01/15 21:32:28 by einterdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,8 +49,8 @@ void print_stacks(t_all *all)
 {
 	int		i;
 
-	getchar();
-	system("clear");
+	// getchar();
+	// system("clear");
 	ft_putnbr_fd(all->size_a, 1);
 	ft_putstr_fd("\033[36;1m ---- stack a -----|  \033[0m", 1);
 	ft_putnbr_fd(all->size_b, 1);

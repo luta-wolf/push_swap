@@ -6,7 +6,7 @@
 /*   By: einterdi <einterdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/12 23:01:02 by einterdi          #+#    #+#             */
-/*   Updated: 2022/01/15 14:03:51 by einterdi         ###   ########.fr       */
+/*   Updated: 2022/01/15 18:45:09 by einterdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,23 +18,28 @@ rrb : reverse rotate b - сдвинуть вниз все элементы ст�
 			Последний элемент становится первым.
 rrr : rra и rrb одновременно.*/
 
-void	rra(t_all *all)
+void	rra(t_all *all, int flag)
 {
 	if (all->size_a > 1)
 		all->stack_a = all->stack_a->prev;
+	if (flag)
+		write(1, "rra\n", 4);
 }
 
-void	rrb(t_all *all)
+void	rrb(t_all *all, int flag)
 {
 	if (all->size_b > 1)
 		all->stack_b = all->stack_b->prev;
+	if (flag)
+		write(1, "rrb\n", 4);
 }
 
 void	rrr(t_all *all)
 {
 	if (all->size_a > 1 && all->size_b > 1)
 	{
-		rra(all);
-		rrb(all);
+		rra(all, 0);
+		rrb(all, 0);
+		write(1, "rrr\n", 4);
 	}
 }

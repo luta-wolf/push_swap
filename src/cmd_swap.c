@@ -6,7 +6,7 @@
 /*   By: einterdi <einterdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/12 22:06:39 by einterdi          #+#    #+#             */
-/*   Updated: 2022/01/15 13:22:59 by einterdi         ###   ########.fr       */
+/*   Updated: 2022/01/15 18:37:56 by einterdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ sb : swap b — поменять местами первые 2 элемента 
 			Ничего не делать, если есть только один элемент или его нет).
 ss : sa и sb одновременно.*/
 
-void	sa(t_all *all)
+void	sa(t_all *all, int flag)
 {
 	int	tmp;
 
@@ -33,9 +33,11 @@ void	sa(t_all *all)
 	tmp = all->stack_a->flag;
 	all->stack_a->flag = all->stack_a->next->flag;
 	all->stack_a->next->flag = tmp;
+	if (flag)
+		write(1, "sa\n", 3);
 }
 
-void	sb(t_all *all)
+void	sb(t_all *all, int flag)
 {
 	int	tmp;
 
@@ -50,13 +52,16 @@ void	sb(t_all *all)
 	tmp = all->stack_b->flag;
 	all->stack_b->flag = all->stack_b->next->flag;
 	all->stack_b->next->flag = tmp;
+	if (flag)
+		write(1, "sb\n", 3);
 }
 
 void	ss(t_all *all)
 {
 	if (all->size_a > 1 && all->size_b > 1)
 	{
-		sa(all);
-		sb(all);
+		sa(all, 0);
+		sb(all, 0);
+		write(1, "ss\n", 3);
 	}
 }

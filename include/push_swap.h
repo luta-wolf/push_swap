@@ -6,7 +6,7 @@
 /*   By: einterdi <einterdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/09 17:44:03 by einterdi          #+#    #+#             */
-/*   Updated: 2022/01/15 13:41:42 by einterdi         ###   ########.fr       */
+/*   Updated: 2022/01/15 22:04:52 by einterdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,10 @@ typedef struct s_all
 	t_node			*stack_b;
 	int				size_a;
 	int				size_b;
+	int				min;
+	int				med;
+	int				max;
+	int				order;
 }					t_all;
 // babble_sort.c
 void	sort(t_all *all, int len, char **arr);
@@ -53,19 +57,24 @@ void	pa(t_all *all);
 void	push_b(t_all *all);
 void	push_a(t_all *all);
 // cmd_swap.c
-void	sa(t_all *all);
-void	sb(t_all *all);
+void	sa(t_all *all, int flag);
+void	sb(t_all *all, int flag);
 void	ss(t_all *all);
 // cmd_rotate.c
-void	ra(t_all *all);
-void	rb(t_all *all);
+void	ra(t_all *all, int flag);
+void	rb(t_all *all, int flag);
 void	rr(t_all *all);
 // cmd_reverse.c
-void	rra(t_all *all);
-void	rrb(t_all *all);
+void	rra(t_all *all, int flag);
+void	rrb(t_all *all, int flag);
 void	rrr(t_all *all);
 // ps_error.c
 void	error(void);
+// sort.c
+void	a_to_b(t_all *all);
+void	min_max_med_a(t_all *all);
+void	min_max_med_b(t_all *all);
+// void	min_push_a(t_all *all);
 
 // ps_print.c - перед сдачей удалить
 void	print_stacks(t_all *all);
