@@ -6,7 +6,7 @@
 /*   By: einterdi <einterdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/12 23:00:12 by einterdi          #+#    #+#             */
-/*   Updated: 2022/01/15 18:35:02 by einterdi         ###   ########.fr       */
+/*   Updated: 2022/01/17 21:24:59 by einterdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,9 +29,9 @@ void	ra(t_all *all, int flag)
 void	rb(t_all *all, int flag)
 {
 	if (all->size_b > 1)
-		all->stack_b = all->stack_b->prev;
+		all->stack_b = all->stack_b->next;
 	if (flag)
-			write(1, "rb\n", 3);
+		write(1, "rb\n", 3);
 }
 
 void	rr(t_all *all)

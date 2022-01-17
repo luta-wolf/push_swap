@@ -6,7 +6,7 @@
 /*   By: einterdi <einterdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/14 16:16:22 by einterdi          #+#    #+#             */
-/*   Updated: 2022/01/17 12:00:07 by einterdi         ###   ########.fr       */
+/*   Updated: 2022/01/17 21:15:02 by einterdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,8 +51,8 @@ void print_stacks(t_all *all)
 	t_node 	*tmp_a;
 	t_node 	*tmp_b;
 
-	// getchar();
-	// system("clear");
+	getchar();
+	system("clear");
 	ft_putstr_fd("\033[01;38;05;226;48;05;97m", 1);
 	ft_putnbr_fd(all->size_a, 1);
 	ft_putstr_fd("\033[0m", 1);
@@ -96,8 +96,7 @@ void print_stacks(t_all *all)
 			printf("%d\t%d\t%d", tmp_b->num, tmp_b->index, tmp_b->flag);
 			tmp_b = tmp_b->next;
 		}
-printf("\n");
-//		write(1, "\n", 1);
+		printf("\n");
 		i++;
 	}
 	ft_putstr_fd("\033[36;1m--------------------|  \033[0m", 1);

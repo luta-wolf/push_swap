@@ -6,7 +6,7 @@
 /*   By: einterdi <einterdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/12 21:09:17 by einterdi          #+#    #+#             */
-/*   Updated: 2022/01/16 17:41:50 by einterdi         ###   ########.fr       */
+/*   Updated: 2022/01/17 16:43:58 by einterdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,13 @@
 
 void	sort(t_all *all, int len, char **arr)
 {
-	int *not_sort;
-	int *sort;
-	int i;
-	int j;
-	int tmp;
-	int count;
-	int num;
+	int	*not_sort;
+	int	*sort;
+	int	i;
+	int	j;
+	int	tmp;
+	int	count;
+	int	num;
 
 	not_sort = malloc(sizeof(int) * (len -1));
 	sort = malloc(sizeof(int) * (len -1));

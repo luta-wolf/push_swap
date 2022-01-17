@@ -1,9 +1,10 @@
 NAME	=	push_swap
 
-SRCS	=	src/push_swap.c	src/babble_sort.c	src/free_node.c \
+SRCS	=	src/push_swap.c	src/init.c			src/sort_babble.c \
 			src/cmd_push.c	src/ps_error.c		src/ps_print.c \
 			src/cmd_swap.c	src/cmd_rotate.c	src/cmd_reverse.c \
-			src/sort.c		src/parser.c
+			src/sort_big.c	src/min_max_med.c	src/sort_min.c \
+			src/parser.c
 
 OBJ		=	$(SRCS:%.c=%.o)
 
