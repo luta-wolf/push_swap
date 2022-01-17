@@ -6,23 +6,30 @@
 /*   By: einterdi <einterdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/09 17:44:12 by einterdi          #+#    #+#             */
-/*   Updated: 2022/01/15 22:36:25 by einterdi         ###   ########.fr       */
+/*   Updated: 2022/01/17 15:22:41 by einterdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	check_arg(char **av)
-{
-	int		i;
+// void	check_arg(char **av)
+// {
+// 	int		i;
+// 	int		j;
 
-	i = 1;
-	while (av[i])
-	{
-		printf("%s\n", av[i]);
-		i++;
-	}
-}
+// 	i = 1;
+// 	while (av[i])
+// 	{
+// 		j = i + 1;
+// 		while (av[j])
+// 		{
+// 			if (ft_atoi(av[i]) == ft_atoi(av[j]))
+// 				error();
+// 			j++;
+// 		}
+// 		i++;
+// 	}
+// }
 
 t_node	*new_list(int num, int index)
 {
@@ -81,15 +88,27 @@ void	add_stack(int argc, char **argv)
 	all->size_b = 0;
 	all->order = 0;
 	sort(all, argc, argv);
+	if (sort_true(all))
+	{
+		printf("Sort\n");
+		free_stack(all);
+	}
+	// sort_three_a(all);
+	// short_cut(all);
+	sort_five(all);
+
+
+	// printf("num = %d ind = [%d]", all->stack_a->num, all->stack_a->index);
 	// print_stacks(all);
-	min_max_med_a(all);
+	// pb(all);
+	// print_stacks(all);
+	// pb(all);
+	// print_stacks(all);
+	// min_max_med_a(all);
 	// min_max_med_b(all);
-	a_to_b(all);
-	min_max_med_a(all);
-	min_max_med_b(all);
-
-
-
+	// a_to_b(all);
+	// min_max_med_a(all);
+	// min_max_med_b(all);
 
 
 	print_stacks(all);
@@ -101,7 +120,7 @@ int	main(int argc, char **argv)
 {
 	if (argc > 1)
 	{
-//		check_arg(argv);
+		check_arg(argv);
 		add_stack(argc, argv);
 		// sort(argc, argv);
 	}

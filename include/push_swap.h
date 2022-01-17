@@ -6,7 +6,7 @@
 /*   By: einterdi <einterdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/09 17:44:03 by einterdi          #+#    #+#             */
-/*   Updated: 2022/01/15 22:22:06 by einterdi         ###   ########.fr       */
+/*   Updated: 2022/01/17 14:23:57 by einterdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,9 @@ typedef struct s_all
 }					t_all;
 // babble_sort.c
 void	sort(t_all *all, int len, char **arr);
+//	parser.c
+void	check_arg(char **av);
+void	repeated_double(char **av);
 
 void	lstadd_back(t_node **stack_a, t_node *new);
 t_node	*new_list(int num, int index);
@@ -74,6 +77,10 @@ void	error(void);
 void	a_to_b(t_all *all);
 void	min_max_med_a(t_all *all);
 void	min_max_med_b(t_all *all);
+int		sort_true(t_all *all);
+void	sort_three_a(t_all *all);
+void	sort_five(t_all *all);
+int		short_cut(t_all *all);
 // void	min_push_a(t_all *all);
 
 // ps_print.c - перед сдачей удалить

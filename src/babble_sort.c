@@ -6,7 +6,7 @@
 /*   By: einterdi <einterdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/12 21:09:17 by einterdi          #+#    #+#             */
-/*   Updated: 2022/01/15 21:51:36 by einterdi         ###   ########.fr       */
+/*   Updated: 2022/01/16 17:41:50 by einterdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,6 +61,7 @@ void	sort(t_all *all, int len, char **arr)
 		i++;
 	}
 	printf("Массив отсортирован\nИтераций %d\n", count);
+
 	i = 0;
 	while (i < len - 1)
 	{
@@ -68,7 +69,11 @@ void	sort(t_all *all, int len, char **arr)
 		while (j < len - 1)
 		{
 			if (not_sort[i] == sort[j])
+			{
 				lstadd_back(&all->stack_a, new_list(not_sort[i], j + 1));
+				j++;
+				break ;
+			}
 			j++;
 		}
 		i++;

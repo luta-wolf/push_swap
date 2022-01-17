@@ -3,7 +3,7 @@ NAME	=	push_swap
 SRCS	=	src/push_swap.c	src/babble_sort.c	src/free_node.c \
 			src/cmd_push.c	src/ps_error.c		src/ps_print.c \
 			src/cmd_swap.c	src/cmd_rotate.c	src/cmd_reverse.c \
-			src/sort.c
+			src/sort.c		src/parser.c
 
 OBJ		=	$(SRCS:%.c=%.o)
 

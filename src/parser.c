@@ -1,37 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   free_node.c                                        :+:      :+:    :+:   */
+/*   parser.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: einterdi <einterdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/12 21:24:02 by einterdi          #+#    #+#             */
-/*   Updated: 2022/01/16 21:19:54 by einterdi         ###   ########.fr       */
+/*   Created: 2022/01/16 21:06:12 by einterdi          #+#    #+#             */
+/*   Updated: 2022/01/16 21:10:54 by einterdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	free_stack(t_all *all)
+void	repeated_double(char **av)
 {
-	t_node	*tmp;
+	int		i;
+	int		j;
 
-	// all->stack_a->prev->next = NULL;
-	while (all->size_a--)
+	i = 1;
+	while (av[i])
 	{
-		tmp = all->stack_a->next;
-		free(all->stack_a);
-		all->stack_a = NULL;
-		all->stack_a = tmp;
+		j = i + 1;
+		while (av[j])
+		{
+			if (ft_atoi(av[i]) == ft_atoi(av[j]))
+				error();
+			j++;
+		}
+		i++;
 	}
-	// all->stack_b->prev->next = NULL;
-	while (all->size_b--)
-	{
-		tmp = all->stack_b->next;
-		free(all->stack_b);
-		all->stack_b = NULL;
-		all->stack_b = tmp;
-	}
-	free(all);
-	exit(0);
+}
+
+void	check_arg(char **av)
+{
+	repeated_double(av);
 }
