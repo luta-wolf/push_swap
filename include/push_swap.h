@@ -6,7 +6,7 @@
 /*   By: einterdi <einterdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/09 17:44:03 by einterdi          #+#    #+#             */
-/*   Updated: 2022/01/17 21:00:14 by einterdi         ###   ########.fr       */
+/*   Updated: 2022/01/17 22:36:06 by einterdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,6 +81,7 @@ int		short_cut(t_all *all);
 // sort_big.c
 void	search_min_b(t_all *all);
 void	move_b_to_a(t_all *all);
+void	move_a_to_b(t_all *all);
 
 // min_max_med.c
 void	move_a_to_b_first(t_all *all);

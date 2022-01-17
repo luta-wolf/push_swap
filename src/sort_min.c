@@ -6,7 +6,7 @@
 /*   By: einterdi <einterdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/17 15:47:23 by einterdi          #+#    #+#             */
-/*   Updated: 2022/01/17 22:10:39 by einterdi         ###   ########.fr       */
+/*   Updated: 2022/01/17 23:05:24 by einterdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,10 +52,12 @@ void	sort_three_b(t_all *all)
 	int	a;
 	int	b;
 	int	c;
+	int i;
 
 	a = all->stack_b->index;
 	b = all->stack_b->next->index;
 	c = all->stack_b->prev->index;
+	i = all->size_b;
 	if (b > a && b > c)
 		rrb(all, 1);
 	else if (a > b && a > c)
@@ -64,15 +66,22 @@ void	sort_three_b(t_all *all)
 	b = all->stack_b->next->index;
 	if (a > b)
 		sb(all, 1);
+	while (i-- > 0)
+	{
 	all->stack_b->flag = -1;
 	pa(all);
 	ra(all, 1);
-	all->stack_b->flag = -1;
-	pa(all);
-	ra(all, 1);
-	all->stack_b->flag = -1;
-	pa(all);
-	ra(all, 1);
+	}
+
+	// all->stack_b->flag = -1;
+	// pa(all);
+	// ra(all, 1);
+	// all->stack_b->flag = -1;
+	// pa(all);
+	// ra(all, 1);
+	// all->stack_b->flag = -1;
+	// pa(all);
+	// ra(all, 1);
 }
 
 int	short_cut(t_all *all)

@@ -6,7 +6,7 @@
 /*   By: einterdi <einterdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/17 16:36:26 by einterdi          #+#    #+#             */
-/*   Updated: 2022/01/17 22:31:54 by einterdi         ###   ########.fr       */
+/*   Updated: 2022/01/17 22:51:35 by einterdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,14 +60,11 @@ void	move_b_to_a(t_all *all)
 	}
 }
 
-// void	move_a_to_b(t_all *all)
-// {
-// 	int i;
+void	move_a_to_b(t_all *all)
+{
+	int flag;
 
-// 	i = all->size_a/2;
-// 	while (i-- > 0)
-// 	{
-// 		if (all->stack_a->index == )
-// 	}
-
-// }
+	flag = all->stack_a->flag;
+	while (all->stack_a->flag == flag && flag != -1)
+		pb(all);
+}
