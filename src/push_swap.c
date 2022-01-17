@@ -6,7 +6,7 @@
 /*   By: einterdi <einterdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/09 17:44:12 by einterdi          #+#    #+#             */
-/*   Updated: 2022/01/17 21:25:35 by einterdi         ###   ########.fr       */
+/*   Updated: 2022/01/17 22:27:48 by einterdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,13 +28,29 @@ void	add_stack(int argc, char **argv)
 	}
 	move_a_to_b_first(all);
 	//---------------------------------------------------
-	while (!sort_true(all) && all->size_b != 0)
+	// while (!sort_true(all) && all->size_b != 0)
+	// {
+	// 	printf("Hello World!\n");
+	// 	break ;
+	// }
+
+	// print_stacks(all);
+	// sort_three_a(all);
+	// print_stacks(all);
+	// sort_three_b(all);
+
+	while (sort_true(all) || all->size_b != 0)
 	{
-		printf("Hello World!\n");
-		break ;
+		print_stacks(all);
+		if (all->size_b < 4)
+			sort_three_b(all);
+		else if (all->size_b >= 4)
+			move_b_to_a(all);
 	}
+
 	print_stacks(all);
-	move_b_to_a(all);
+	// move_b_to_a(all);
+	// move_b_to_a(all);
 
 
 	print_stacks(all);
