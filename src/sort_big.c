@@ -6,7 +6,7 @@
 /*   By: einterdi <einterdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/17 16:36:26 by einterdi          #+#    #+#             */
-/*   Updated: 2022/01/19 16:49:19 by einterdi         ###   ########.fr       */
+/*   Updated: 2022/01/19 22:55:05 by einterdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,8 +48,6 @@ void	move_b_to_a(t_all *all)
 	{
 		if (search_min_b_to_a(all))
 			continue ;
-		if (all->size_b == 0)
-			break ;
 		if (all->stack_b->index > all->med)
 		{
 			all->stack_b->flag++;
@@ -78,8 +76,6 @@ void	move_a_to_b(t_all *all)
 	int	min;
 
 	flag = all->stack_a->flag;
-	if (all->stack_a->flag == flag && flag != -1)
-		pb(all);
 	while (all->stack_a->flag == flag && flag != -1)
 	{
 		min = all->stack_a->prev->index + 1;
@@ -118,6 +114,12 @@ void	search_min_a_to_b(t_all *all)
 		all->stack_b->prev->flag = -1;
 		rrb(all, 1);
 		pa(all);
+		ra(all, 1);
+	}
+	else if (all->stack_a->next->index == min)
+	{
+		all->stack_a->next->flag = -1;
+		sa(all, 1);
 		ra(all, 1);
 	}
 }
