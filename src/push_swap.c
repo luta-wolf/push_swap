@@ -6,7 +6,7 @@
 /*   By: einterdi <einterdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/09 17:44:12 by einterdi          #+#    #+#             */
-/*   Updated: 2022/01/18 22:58:15 by einterdi         ###   ########.fr       */
+/*   Updated: 2022/01/19 12:16:18 by einterdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,9 +44,9 @@ void	add_stack(int argc, char **argv)
 	}
 	i = sort_true(all);
 
-	print_stacks(all);
+	// print_stacks(all);
 	printf("sort(%d), size_b(%d)\n", i, all->size_b);
-	printf("min %d, min_a %d\n", all->min, all->stack_a->prev->index + 1);
+	// printf("min %d, min_a %d\n", all->min, all->stack_a->prev->index + 1);
 
 
 
