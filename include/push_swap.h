@@ -6,7 +6,7 @@
 /*   By: einterdi <einterdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/09 17:44:03 by einterdi          #+#    #+#             */
-/*   Updated: 2022/01/18 13:34:36 by einterdi         ###   ########.fr       */
+/*   Updated: 2022/01/19 15:01:11 by einterdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,7 +79,7 @@ void	sort_five(t_all *all);
 int		short_cut(t_all *all);
 //---------------------------------------
 // sort_big.c
-void	search_min_b(t_all *all);
+int		search_min_b(t_all *all);
 void	move_b_to_a(t_all *all);
 void	move_a_to_b(t_all *all);
 
