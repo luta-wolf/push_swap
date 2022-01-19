@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   babble_sort.c                                      :+:      :+:    :+:   */
+/*   sort_babble.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: einterdi <einterdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/12 21:09:17 by einterdi          #+#    #+#             */
-/*   Updated: 2022/01/17 16:43:58 by einterdi         ###   ########.fr       */
+/*   Updated: 2022/01/18 10:58:42 by einterdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,9 +33,9 @@ void	sort(t_all *all, int len, char **arr)
 		i++;
 	}
 	i = 0;
-	while (i < len - 1)
-		printf("%d ", not_sort[i++]);
-	printf("Начальный массив\n");
+	// while (i < len - 1)
+	// 	printf("%d ", not_sort[i++]);
+	// printf("Начальный массив\n");
 	i = 0;
 	count = 0;
 	while(i < (len - 1))
@@ -55,12 +55,12 @@ void	sort(t_all *all, int len, char **arr)
 		i++;
 	}
 	i = 0;
-	while (i < (len - 1))
-	{
-		printf("%d ", sort[i]);
-		i++;
-	}
-	printf("Массив отсортирован\nИтераций %d\n", count);
+	// while (i < (len - 1))
+	// {
+	// 	printf("%d ", sort[i]);
+	// 	i++;
+	// }
+	// printf("Массив отсортирован\nИтераций %d\n", count);
 
 	i = 0;
 	while (i < len - 1)
