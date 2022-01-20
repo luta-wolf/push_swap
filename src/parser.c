@@ -6,7 +6,7 @@
 /*   By: einterdi <einterdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/16 21:06:12 by einterdi          #+#    #+#             */
-/*   Updated: 2022/01/21 00:43:37 by einterdi         ###   ########.fr       */
+/*   Updated: 2022/01/21 01:46:25 by einterdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ void	check_arg(char **arr)
 
 char	**get_line(char **av)
 {
-	int		i;
+	int	i;
 	char	*line;
 	char	*tmp;
 	char	**arr;
@@ -94,8 +94,25 @@ void	parsing(char **av)
 {
 	char	**arr;
 
-	arr = get_line(av);
+	arr  = get_line(av);
 	check_arg(arr);
 	repeated_double(arr);
 	free_arr(arr, 0);
 }
+
+
+// t_all	*parsing(int argc, char **argv)
+// {
+// 	t_all	*all;
+// 	char	**arr;
+
+// 	arr  = get_line(argv);
+// 	check_arg(arr);
+// 	repeated_double(arr);
+// 	all = init_struct(argc);
+// 	add_to_stack(all, argc, arr);
+// 	free_arr(arr, 0);
+// 	if (sort_true(all))
+// 		free_stack(all);
+// 	return (all);
+// }

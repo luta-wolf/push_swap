@@ -6,7 +6,7 @@
 /*   By: einterdi <einterdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/09 17:44:12 by einterdi          #+#    #+#             */
-/*   Updated: 2022/01/21 00:29:27 by einterdi         ###   ########.fr       */
+/*   Updated: 2022/01/21 01:46:14 by einterdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,15 +47,17 @@ void	sorting(int argc, char **argv)
 	free_stack(all);
 }
 
+
 int	main(int argc, char **argv)
 {
 	if (argc > 1)
 	{
-		parsing(argv);
+		// parsing(argv);
 		sorting(argc, argv);
 	}
 	return (0);
 }
+
 
 
 /*
