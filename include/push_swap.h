@@ -6,7 +6,7 @@
 /*   By: einterdi <einterdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/09 17:44:03 by einterdi          #+#    #+#             */
-/*   Updated: 2022/01/19 18:55:43 by einterdi         ###   ########.fr       */
+/*   Updated: 2022/01/21 00:44:08 by einterdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@
 // colors
 # define TURQUOISE 	"\033[36;1m"
 # define END		"\033[0m"
+
 // структура листа
 typedef struct s_node
 {
@@ -41,8 +42,15 @@ typedef struct s_all
 	int				min;
 	int				med;
 	int				max;
-	int				order;
+	int				min_a;
 }					t_all;
+
+//	parser.c
+void	parsing(char **av);
+char	**get_line(char **av);
+void	repeated_double(char **av);
+void	check_arg(char **arr);
+void	free_arr(char **arr, int flag);
 
 // init.c
 t_all	*init_struct(int argc);
@@ -93,10 +101,8 @@ void	min_max_med_b(t_all *all);
 void	print_stacks(t_all *all);
 
 // sort_babble.c
-void	sort(t_all *all, int len, char **arr);
-//	parser.c
-void	check_arg(char **av);
-void	repeated_double(char **av);
+void	add_to_stack(t_all *all, int len, char **arr);
+
 
 // ps_error.c
 void	error(void);

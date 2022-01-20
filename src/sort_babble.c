@@ -6,13 +6,13 @@
 /*   By: einterdi <einterdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/12 21:09:17 by einterdi          #+#    #+#             */
-/*   Updated: 2022/01/18 10:58:42 by einterdi         ###   ########.fr       */
+/*   Updated: 2022/01/20 15:13:54 by einterdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	sort(t_all *all, int len, char **arr)
+void	add_to_stack(t_all *all, int len, char **arr)
 {
 	int	*not_sort;
 	int	*sort;

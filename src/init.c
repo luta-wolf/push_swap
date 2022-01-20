@@ -6,7 +6,7 @@
 /*   By: einterdi <einterdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/12 21:24:02 by einterdi          #+#    #+#             */
-/*   Updated: 2022/01/17 18:17:52 by einterdi         ###   ########.fr       */
+/*   Updated: 2022/01/20 16:01:07 by einterdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ t_all	*init_struct(int argc)
 	all->stack_b = NULL;
 	all->size_a = argc - 1;
 	all->size_b = 0;
-	all->order = 0;
+	all->min_a = 1;
 	return (all);
 }
 

@@ -6,7 +6,7 @@
 /*   By: einterdi <einterdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/17 15:47:23 by einterdi          #+#    #+#             */
-/*   Updated: 2022/01/17 23:21:39 by einterdi         ###   ########.fr       */
+/*   Updated: 2022/01/21 00:51:37 by einterdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ void	sort_three_b(t_all *all)
 	int	a;
 	int	b;
 	int	c;
-	int i;
+	int	i;
 
 	a = all->stack_b->index;
 	b = all->stack_b->next->index;
@@ -68,9 +68,9 @@ void	sort_three_b(t_all *all)
 		sb(all, 1);
 	while (i-- > 0)
 	{
-	all->stack_b->flag = -1;
-	pa(all);
-	ra(all, 1);
+		all->stack_b->flag = -1;
+		pa(all);
+		ra(all, 1);
 	}
 }
 

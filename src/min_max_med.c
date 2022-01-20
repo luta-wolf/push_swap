@@ -6,7 +6,7 @@
 /*   By: einterdi <einterdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/15 14:29:49 by einterdi          #+#    #+#             */
-/*   Updated: 2022/01/19 21:23:04 by einterdi         ###   ########.fr       */
+/*   Updated: 2022/01/20 16:01:13 by einterdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -125,7 +125,6 @@ void	min_max_med_a(t_all *all)
 	all->min = min;
 	all->max = max;
 	all->med = (min + max) / 2;
-	all->order = min;
 }
 
 void	min_max_med_b(t_all *all)
