@@ -6,15 +6,11 @@
 /*   By: einterdi <einterdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/25 19:09:35 by einterdi          #+#    #+#             */
-/*   Updated: 2021/12/26 22:28:13 by einterdi         ###   ########.fr       */
+/*   Updated: 2022/01/21 17:29:34 by einterdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-# ifndef BUFFER_SIZE
-#  define BUFFER_SIZE 10
-# endif
 
 char	*ft_remainder(char **tail)
 {
