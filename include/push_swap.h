@@ -6,7 +6,7 @@
 /*   By: einterdi <einterdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/09 17:44:03 by einterdi          #+#    #+#             */
-/*   Updated: 2022/01/21 17:16:41 by einterdi         ###   ########.fr       */
+/*   Updated: 2022/01/22 00:32:57 by einterdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,25 +65,25 @@ void	babble_sort(t_all *all, int *sort, int *not_sort, int len);
 void	create_stack(t_all *all, int *sort, int *not_sort, int len);
 
 // cmd_push.c
-void	pb(t_all *all);
-void	pa(t_all *all);
+void	pb(t_all *all, int flag);
+void	pa(t_all *all, int flag);
 void	push_b(t_all *all);
 void	push_a(t_all *all);
 
 // cmd_swap.c
 void	sa(t_all *all, int flag);
 void	sb(t_all *all, int flag);
-void	ss(t_all *all);
+void	ss(t_all *all, int flag);
 
 // cmd_rotate.c
 void	ra(t_all *all, int flag);
 void	rb(t_all *all, int flag);
-void	rr(t_all *all);
+void	rr(t_all *all, int flag);
 
 // cmd_reverse.c
 void	rra(t_all *all, int flag);
 void	rrb(t_all *all, int flag);
-void	rrr(t_all *all);
+void	rrr(t_all *all, int flag);
 
 // sort_min.c
 int		sort_true(t_all *all);

@@ -6,7 +6,7 @@
 /*   By: einterdi <einterdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/12 22:59:40 by einterdi          #+#    #+#             */
-/*   Updated: 2022/01/19 13:45:15 by einterdi         ###   ########.fr       */
+/*   Updated: 2022/01/22 00:19:35 by einterdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,7 @@ void	push_a(t_all *all)
 	all->stack_b = tmp;
 }
 
-void	pb(t_all *all)
+void	pb(t_all *all, int flag)
 {
 	if (all->size_a == 0)
 		return ;
@@ -74,10 +74,11 @@ void	pb(t_all *all)
 		all->stack_a = NULL;
 	all->size_b++;
 	all->size_a--;
-	write(1, "pb\n", 3);
+	if (flag)
+		write(1, "pb\n", 3);
 }
 
-void	pa(t_all *all)
+void	pa(t_all *all, int flag)
 {
 	if (all->size_b == 0)
 		return ;
@@ -86,5 +87,6 @@ void	pa(t_all *all)
 		all->stack_b = NULL;
 	all->size_b--;
 	all->size_a++;
-	write(1, "pa\n", 3);
+	if (flag)
+		write(1, "pa\n", 3);
 }

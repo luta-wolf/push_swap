@@ -6,7 +6,7 @@
 /*   By: einterdi <einterdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/15 14:29:49 by einterdi          #+#    #+#             */
-/*   Updated: 2022/01/21 16:19:38 by einterdi         ###   ########.fr       */
+/*   Updated: 2022/01/22 00:22:17 by einterdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	move_down(t_all *all)
 		rrb(all, 1);
 	while (all->stack_b->flag == -1)
 	{
-		pa(all);
+		pa(all, 1);
 		ra(all, 1);
 	}
 }
@@ -33,7 +33,7 @@ void	move_a_to_b_first(t_all *all)
 	{
 		if (all->stack_a->index <= all->med)
 		{
-			pb(all);
+			pb(all, 1);
 			if (all->stack_b->index == all->min)
 			{
 				all->stack_b->flag = -1;

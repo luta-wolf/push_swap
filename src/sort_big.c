@@ -6,7 +6,7 @@
 /*   By: einterdi <einterdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/17 16:36:26 by einterdi          #+#    #+#             */
-/*   Updated: 2022/01/21 15:59:41 by einterdi         ###   ########.fr       */
+/*   Updated: 2022/01/22 00:22:02 by einterdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int	search_min_b_to_a(t_all *all)
 	min = all->stack_a->prev->index + 1;
 	if (all->stack_b->index == min)
 	{
-		pa(all);
+		pa(all, 1);
 		push_down(all);
 		return (1);
 	}
@@ -46,7 +46,7 @@ void	move_b_to_a(t_all *all)
 		if (all->stack_b->index > all->med)
 		{
 			all->stack_b->flag++;
-			pa(all);
+			pa(all, 1);
 		}
 		else
 		{
@@ -82,7 +82,7 @@ void	move_a_to_b(t_all *all)
 			ra(all, 1);
 		}
 		else
-			pb(all);
+			pb(all, 1);
 	}
 }
 
@@ -99,19 +99,19 @@ void	search_min_a_to_b(t_all *all)
 	min = all->stack_a->prev->index + 1;
 	if (all->stack_b->index == min)
 	{
-		pa(all);
+		pa(all, 1);
 		push_down(all);
 	}
 	else if (all->stack_b->next->index == min)
 	{
 		sb(all, 1);
-		pa(all);
+		pa(all, 1);
 		push_down(all);
 	}
 	else if (all->stack_b->prev->index == min)
 	{
 		rrb(all, 1);
-		pa(all);
+		pa(all, 1);
 		push_down(all);
 	}
 	else if (all->stack_a->next->index == min)

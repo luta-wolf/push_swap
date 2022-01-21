@@ -6,7 +6,7 @@
 /*   By: einterdi <einterdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/12 23:00:12 by einterdi          #+#    #+#             */
-/*   Updated: 2022/01/17 21:24:59 by einterdi         ###   ########.fr       */
+/*   Updated: 2022/01/22 00:16:15 by einterdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,12 +34,13 @@ void	rb(t_all *all, int flag)
 		write(1, "rb\n", 3);
 }
 
-void	rr(t_all *all)
+void	rr(t_all *all, int flag)
 {
 	if (all->size_a > 1 && all->size_b > 1)
 	{
 		ra(all, 0);
 		rb(all, 0);
-		write(1, "rr\n", 3);
+		if (flag)
+			write(1, "rr\n", 3);
 	}
 }

@@ -6,7 +6,7 @@
 /*   By: einterdi <einterdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/17 15:47:23 by einterdi          #+#    #+#             */
-/*   Updated: 2022/01/21 00:51:37 by einterdi         ###   ########.fr       */
+/*   Updated: 2022/01/22 00:22:59 by einterdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,7 +69,7 @@ void	sort_three_b(t_all *all)
 	while (i-- > 0)
 	{
 		all->stack_b->flag = -1;
-		pa(all);
+		pa(all, 1);
 		ra(all, 1);
 	}
 }
@@ -108,7 +108,7 @@ void	sort_five(t_all *all)
 		min_max_med_a(all);
 		if (all->stack_a->index == all->min)
 		{
-			pb(all);
+			pb(all, 1);
 			continue ;
 		}
 		if (short_cut(all))
@@ -117,6 +117,6 @@ void	sort_five(t_all *all)
 			rra(all, 1);
 	}
 	sort_three_a(all);
-	pa(all);
-	pa(all);
+	pa(all, 1);
+	pa(all, 1);
 }
