@@ -6,7 +6,7 @@
 /*   By: einterdi <einterdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/09 17:44:12 by einterdi          #+#    #+#             */
-/*   Updated: 2022/01/21 16:22:14 by einterdi         ###   ########.fr       */
+/*   Updated: 2022/01/21 17:18:45 by einterdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ void	sorting(t_all *all)
 }
 
 // use for visualization
-// print_stacks(all);
+// print_stacks(all, all->stack_a, all->stack_b);
 
 int	main(int argc, char **argv)
 {

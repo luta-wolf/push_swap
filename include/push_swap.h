@@ -6,7 +6,7 @@
 /*   By: einterdi <einterdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/09 17:44:03 by einterdi          #+#    #+#             */
-/*   Updated: 2022/01/21 16:06:31 by einterdi         ###   ########.fr       */
+/*   Updated: 2022/01/21 17:16:41 by einterdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -106,6 +106,6 @@ void	min_max_med_b(t_all *all);
 void	move_down(t_all *all);
 
 // ps_print.c - перед сдачей удалить
-void	print_stacks(t_all *all);
+void	print_stacks(t_all *all, t_node *tmp_a, t_node	*tmp_b);
 
 #endif

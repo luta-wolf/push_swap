@@ -6,7 +6,7 @@
 /*   By: einterdi <einterdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/16 21:06:12 by einterdi          #+#    #+#             */
-/*   Updated: 2022/01/21 14:20:57 by einterdi         ###   ########.fr       */
+/*   Updated: 2022/01/21 17:09:34 by einterdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,7 +82,7 @@ void	repeated_double(char **arr)
 	int		i;
 	int		j;
 
-	i = 1;
+	i = 0;
 	while (arr[i])
 	{
 		j = i + 1;
