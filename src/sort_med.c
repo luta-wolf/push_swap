@@ -1,78 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   min_max_med.c                                      :+:      :+:    :+:   */
+/*   sort_med.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: einterdi <einterdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/15 14:29:49 by einterdi          #+#    #+#             */
-/*   Updated: 2022/01/20 16:01:13 by einterdi         ###   ########.fr       */
+/*   Updated: 2022/01/21 16:19:38 by einterdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-// void	move_a_to_b_first(t_all *all)
-// {
-// 	int	i;
-// 	int len;
-
-// 	min_max_med_a(all);
-// 	len = all->max - all->med + 1;
-// 	i = all->size_a;
-// 	while (i-- > 0)
-// 	{
-// 		if (all->stack_a->index <= all->med)
-// 			pb(all);
-// 		else
-// 		{
-// 			if (all->size_b == len)
-// 				break ;
-// 			else
-// 				ra(all, 1);
-// 		}
-// 	}
-// }
-
-// void	move_a_to_b_first(t_all *all)
-// {
-// 	int	i;
-// 	int len;
-
-// 	min_max_med_a(all);
-// 	len = all->max - all->med + 1;
-// 	i = all->size_a;
-// 	while (i-- > 0)
-// 	{
-// 		if (all->stack_a->index <= all->med)
-// 		{
-// 			pb(all);
-// 			if (all->stack_b->index == all->min)
-// 			{
-// 				all->stack_b->flag = -1;
-// 				rb(all, 1);
-// 			}
-// 		}
-// 		else
-// 		{
-// 			if (all->size_b == len)
-// 				break ;
-// 			else
-// 				ra(all, 1);
-// 		}
-// 	}
-// 	rrb(all, 1);
-// 	pa(all);
-// 	ra(all, 1);
-// }
+void	move_down(t_all *all)
+{
+	while (all->stack_b->prev->flag == -1)
+		rrb(all, 1);
+	while (all->stack_b->flag == -1)
+	{
+		pa(all);
+		ra(all, 1);
+	}
+}
 
 void	move_a_to_b_first(t_all *all)
 {
 	int	i;
-	int len;
 
 	min_max_med_a(all);
-	len = all->max - all->med + 1;
 	i = all->size_a;
 	while (i-- > 0)
 	{
@@ -82,25 +37,18 @@ void	move_a_to_b_first(t_all *all)
 			if (all->stack_b->index == all->min)
 			{
 				all->stack_b->flag = -1;
-				all->min++;
 				rb(all, 1);
 			}
 		}
 		else
 		{
-			if (all->size_b == len)
+			if (all->size_b == all->max - all->med + 1)
 				break ;
 			else
 				ra(all, 1);
 		}
 	}
-	while (all->stack_b->prev->flag == -1)
-		rrb(all, 1);
-	while (all->stack_b->flag == -1)
-	{
-		pa(all);
-		ra(all, 1);
-	}
+	move_down(all);
 }
 
 void	min_max_med_a(t_all *all)
@@ -146,7 +94,6 @@ void	min_max_med_b(t_all *all)
 			max = all->stack_b->index;
 		all->stack_b = all->stack_b->next;
 	}
-	// all->min = min;
 	all->max = max;
 	all->med = (min + max) / 2;
 }

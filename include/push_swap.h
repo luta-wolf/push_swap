@@ -6,7 +6,7 @@
 /*   By: einterdi <einterdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/09 17:44:03 by einterdi          #+#    #+#             */
-/*   Updated: 2022/01/21 01:46:46 by einterdi         ###   ########.fr       */
+/*   Updated: 2022/01/21 16:06:31 by einterdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,6 @@
 
 # define MAX_INT 2147483647
 # define MIN_INT -2147483648
-// colors
-# define TURQUOISE 	"\033[36;1m"
-# define END		"\033[0m"
 
 // структура листа
 typedef struct s_node
@@ -45,18 +42,27 @@ typedef struct s_all
 	int				min_a;
 }					t_all;
 
-//	parser.c
-void	parsing(char **av);
+// push_swap.c
+t_all	*parsing(char **argv);
+void	sorting(t_all *all);
+
+//	parser_check.c
 char	**get_line(char **av);
 void	repeated_double(char **av);
 void	check_arg(char **arr);
 void	free_arr(char **arr, int flag);
+void	error(void);
 
-// init.c
-t_all	*init_struct(int argc);
+// parser_init.c
+t_all	*init_struct(char **arr);
 t_node	*new_list(int num, int index);
 void	lstadd_back(t_node **stack_a, t_node *new);
 void	free_stack(t_all *all);
+//---------------------------------------
+// parser_add.c
+void	add_to_stack(t_all *all, char **arr);
+void	babble_sort(t_all *all, int *sort, int *not_sort, int len);
+void	create_stack(t_all *all, int *sort, int *not_sort, int len);
 
 // cmd_push.c
 void	pb(t_all *all);
@@ -85,26 +91,21 @@ void	sort_three_a(t_all *all);
 void	sort_three_b(t_all *all);
 void	sort_five(t_all *all);
 int		short_cut(t_all *all);
-//---------------------------------------
+
 // sort_big.c
 int		search_min_b_to_a(t_all *all);
 void	move_b_to_a(t_all *all);
 void	move_a_to_b(t_all *all);
-void    search_min_a_to_b(t_all *all);
+void	search_min_a_to_b(t_all *all);
+void	push_down(t_all *all);
 
-// min_max_med.c
+// sort_med.c
 void	move_a_to_b_first(t_all *all);
 void	min_max_med_a(t_all *all);
 void	min_max_med_b(t_all *all);
+void	move_down(t_all *all);
 
 // ps_print.c - перед сдачей удалить
 void	print_stacks(t_all *all);
-
-// sort_babble.c
-void	add_to_stack(t_all *all, int len, char **arr);
-
-
-// ps_error.c
-void	error(void);
 
 #endif

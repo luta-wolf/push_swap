@@ -6,22 +6,25 @@
 /*   By: einterdi <einterdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/12 21:24:02 by einterdi          #+#    #+#             */
-/*   Updated: 2022/01/20 16:01:07 by einterdi         ###   ########.fr       */
+/*   Updated: 2022/01/21 13:49:02 by einterdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-t_all	*init_struct(int argc)
+t_all	*init_struct(char **arr)
 {
 	t_all	*all;
+	int		i;
 
+	i = -1;
+	while (arr[++i])
 	all = malloc(sizeof(t_all));
 	if (all == NULL)
 		return (NULL);
 	all->stack_a = NULL;
 	all->stack_b = NULL;
-	all->size_a = argc - 1;
+	all->size_a = i;
 	all->size_b = 0;
 	all->min_a = 1;
 	return (all);

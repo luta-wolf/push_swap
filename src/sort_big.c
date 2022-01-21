@@ -6,7 +6,7 @@
 /*   By: einterdi <einterdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/17 16:36:26 by einterdi          #+#    #+#             */
-/*   Updated: 2022/01/20 23:54:36 by einterdi         ###   ########.fr       */
+/*   Updated: 2022/01/21 15:59:41 by einterdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,21 +19,16 @@ int	search_min_b_to_a(t_all *all)
 	min = all->stack_a->prev->index + 1;
 	if (all->stack_b->index == min)
 	{
-		all->stack_b->flag = -1;
 		pa(all);
-		ra(all, 1);
+		push_down(all);
 		return (1);
 	}
 	else if (all->stack_a->index == min)
-	{
-		all->stack_a->flag = -1;
-		ra(all, 1);
-	}
+		push_down(all);
 	else if (all->stack_a->next->index == min)
 	{
-		all->stack_a->next->flag = -1;
 		sa(all, 1);
-		ra(all, 1);
+		push_down(all);
 	}
 	return (0);
 }
@@ -91,6 +86,12 @@ void	move_a_to_b(t_all *all)
 	}
 }
 
+void	push_down(t_all *all)
+{
+	all->stack_a->flag = -1;
+	ra(all, 1);
+}
+
 void	search_min_a_to_b(t_all *all)
 {
 	int	min;
@@ -98,28 +99,24 @@ void	search_min_a_to_b(t_all *all)
 	min = all->stack_a->prev->index + 1;
 	if (all->stack_b->index == min)
 	{
-		all->stack_b->flag = -1;
 		pa(all);
-		ra(all, 1);
+		push_down(all);
 	}
 	else if (all->stack_b->next->index == min)
 	{
-		all->stack_b->next->flag = -1;
 		sb(all, 1);
 		pa(all);
-		ra(all, 1);
+		push_down(all);
 	}
 	else if (all->stack_b->prev->index == min)
 	{
-		all->stack_b->prev->flag = -1;
 		rrb(all, 1);
 		pa(all);
-		ra(all, 1);
+		push_down(all);
 	}
 	else if (all->stack_a->next->index == min)
 	{
-		all->stack_a->next->flag = -1;
 		sa(all, 1);
-		ra(all, 1);
+		push_down(all);
 	}
 }
