@@ -6,7 +6,7 @@
 /*   By: einterdi <einterdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/09 17:44:03 by einterdi          #+#    #+#             */
-/*   Updated: 2022/01/22 00:32:57 by einterdi         ###   ########.fr       */
+/*   Updated: 2022/01/22 16:55:02 by einterdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,6 +98,11 @@ void	move_b_to_a(t_all *all);
 void	move_a_to_b(t_all *all);
 void	search_min_a_to_b(t_all *all);
 void	push_down(t_all *all);
+
+// sort_optima.c
+void	sort_a_to_b_five(t_all *all, int flag, int min, int i);
+void	sort_b_to_a_five(t_all *all);
+void	sort_three_a_to_b(t_all *all);
 
 // sort_med.c
 void	move_a_to_b_first(t_all *all);

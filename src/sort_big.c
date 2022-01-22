@@ -6,7 +6,7 @@
 /*   By: einterdi <einterdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/17 16:36:26 by einterdi          #+#    #+#             */
-/*   Updated: 2022/01/22 00:22:02 by einterdi         ###   ########.fr       */
+/*   Updated: 2022/01/22 16:23:41 by einterdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,10 +77,7 @@ void	move_a_to_b(t_all *all)
 		if (all->size_b > 1)
 			search_min_a_to_b(all);
 		if (all->stack_a->index == min)
-		{
-			all->stack_a->flag = -1;
-			ra(all, 1);
-		}
+			push_down(all);
 		else
 			pb(all, 1);
 	}

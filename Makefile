@@ -5,7 +5,8 @@ NAME_B	=	checker
 SRCS	=	src/push_swap.c	src/parser_init.c	src/parser_add.c \
 			src/cmd_push.c	src/ps_print.c 		src/parser_check.c \
 			src/cmd_swap.c	src/cmd_rotate.c	src/cmd_reverse.c \
-			src/sort_big.c	src/sort_med.c		src/sort_min.c \
+			src/sort_big.c	src/sort_med.c		src/sort_optima.c \
+			src/sort_min.c
 
 SRCS_B	=	src/cheker.c		src/parser_check.c \
 			src/parser_init.c 	src/parser_add.c 	src/cmd_push.c \

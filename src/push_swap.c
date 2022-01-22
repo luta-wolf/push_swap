@@ -6,7 +6,7 @@
 /*   By: einterdi <einterdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/09 17:44:12 by einterdi          #+#    #+#             */
-/*   Updated: 2022/01/21 17:18:45 by einterdi         ###   ########.fr       */
+/*   Updated: 2022/01/22 16:54:22 by einterdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,17 +38,38 @@ void	sorting(t_all *all)
 	move_a_to_b_first(all);
 	while (!(sort_true(all) && all->size_b == 0))
 	{
-		if (all->size_b > 0 && all->size_b < 4)
-			sort_three_b(all);
-		else if (all->size_b >= 4)
+		if (all->size_b > 0 && all->size_b < 6)
+			sort_b_to_a_five(all);
+		else if (all->size_b >= 6)
 			move_b_to_a(all);
 		if (all->size_b == 0)
+		{
+			sort_a_to_b_five(all, 0, 0, 0);
 			move_a_to_b(all);
+		}
 	}
 }
 
-// use for visualization
-// print_stacks(all, all->stack_a, all->stack_b);
+// void	sorting(t_all *all)
+// {
+// 	if (sort_true(all))
+// 		free_stack(all);
+// 	if (all->size_a < 6)
+// 	{
+// 		sort_five(all);
+// 		free_stack(all);
+// 	}
+// 	move_a_to_b_first(all);
+// 	while (!(sort_true(all) && all->size_b == 0))
+// 	{
+// 		if (all->size_b > 0 && all->size_b < 4)
+// 			sort_three_b(all);
+// 		else if (all->size_b >= 4)
+// 			move_b_to_a(all);
+// 		if (all->size_b == 0)
+// 			move_a_to_b(all);
+// 	}
+// }
 
 int	main(int argc, char **argv)
 {
@@ -62,3 +83,6 @@ int	main(int argc, char **argv)
 	}
 	return (0);
 }
+
+// use for visualization
+// print_stacks(all, all->stack_a, all->stack_b);
