@@ -106,5 +106,5 @@ ARG=`ruby -e "puts (1..100).to_a.shuffle.join(' ')"`; ./push_swap $ARG | ./check
 - после сортировки всю память очищаем и выходим
 
 Полезные материалы при написании проекта
-- Руководство по написанию проекта https://vk.com/@forum42intra-push-swap
-- Видео по push_swap https://www.youtube.com/watch?v=KeDXVukgd9g&ab_channel=Edu_events_mow
+- Руководство по написанию https://vk.com/@forum42intra-push-swap
+- Видео https://www.youtube.com/watch?v=KeDXVukgd9g&ab_channel=Edu_events_mow
