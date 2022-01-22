@@ -48,26 +48,26 @@ libft:
 
 $(NAME):	$(OBJ)
 			$(CC) $(FLAGS) $(OBJ) $(LIB) -o $(NAME)
-			@echo "$(TURQUOISE)\n< Complited $(NAME) >\n$(END)"
+			@echo "$(TURQUOISE)\n\t Complited $(NAME) \n$(END)"
 
 %.o:		%.c $(INCLUDE)$(HEADER)
 			$(CC) $(FLAGS)  -c $< -o $@ -I $(INCLUDE)
 
 bonus:		libft $(OBJ_B)
 			$(CC) $(FLAGS) $(OBJ_B) $(LIB) -o $(NAME_B)
-			@echo "$(TURQUOISE)\n< Complited $(NAME_B) >\n$(END)"
+			@echo "$(TURQUOISE)\n\tComplited $(NAME_B) \n$(END)"
 
 clean:
 			@$(RM) $(OBJ) $(OBJ_B)
 			@$(MAKE) -C libft/ clean
-			@echo "$(YELLOW)\n< Cleaning succeed >\n$(END)"
+			@echo "$(BLUE)\n\tCleaning succeed\n$(END)"
 
 fclean:		clean
 			@$(MAKE) -C libft/ fclean
 			@$(RM) $(NAME) $(NAME_B)
-			@echo "$(YELLOW)\n< All files were deleted >\n$(END)"
+			@echo "$(BLUE)\tAll files were deleted\n$(END)"
 
 re:			fclean all
-			@echo "$(BLUE)\n< Remake done >\n$(END)"
+			@echo "$(BLUE)\tRemake done\n$(END)"
 
 
