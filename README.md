@@ -104,7 +104,7 @@ ARG=`ruby -e "puts (1..100).to_a.shuffle.join(' ')"`; ./push_swap $ARG | ./check
 
 3) Чистим стек
 - после сортировки всю память очищаем и выходим
-![image](https://user-images.githubusercontent.com/58044383/150675178-f2e5fb35-063a-471a-b25a-4ee8b26a06aa.png)
+![image](https://user-images.githubusercontent.com/58044383/150675206-21d2f50a-2494-41ce-bbad-7f2a41dfc54f.png)
 
 
 
