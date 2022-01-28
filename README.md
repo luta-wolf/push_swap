@@ -114,7 +114,5 @@ ARG=`ruby -e "puts (1..100).to_a.shuffle.join(' ')"`; ./push_swap $ARG | ./check
 Полезные материалы
 ------------------
 - Руководство по [быстрой](https://vk.com/@forum42intra-push-swap "https://vk.com/@forum42intra-push-swap") сортировке.
-- 
-- https://vk.com/@forum42intra-push-swap
-- Видео по сортировке выбором https://www.youtube.com/watch?v=KeDXVukgd9g&ab_channel=Edu_events_mow
-- Видео по быстрой сортировке https://www.youtube.com/watch?v=98r9uhjPveE&ab_channel=Bakyt
+- Видео по сортировке [выбором](https://www.youtube.com/watch?v=KeDXVukgd9g&ab_channel=Edu_events_mow "https://www.youtube.com/watch?v=KeDXVukgd9g&ab_channel=Edu_events_mow").
+- Видео по [быстрой](https://www.youtube.com/watch?v=98r9uhjPveE&ab_channel=Bakyt "https://www.youtube.com/watch?v=98r9uhjPveE&ab_channel=Bakyt") сортировке.
