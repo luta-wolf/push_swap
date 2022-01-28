@@ -111,6 +111,8 @@ ARG=`ruby -e "puts (1..100).to_a.shuffle.join(' ')"`; ./push_swap $ARG | ./check
 
 
 
-Полезные материалы при написании проекта
-- Руководство по написанию https://vk.com/@forum42intra-push-swap
-- Видео https://www.youtube.com/watch?v=KeDXVukgd9g&ab_channel=Edu_events_mow
+Полезные материалы
+------------------
+- Руководство по быстрой сортировке https://vk.com/@forum42intra-push-swap
+- Видео по сортировке выбором https://www.youtube.com/watch?v=KeDXVukgd9g&ab_channel=Edu_events_mow
+- Видео по быстрой сортировке https://www.youtube.com/watch?v=98r9uhjPveE&ab_channel=Bakyt
